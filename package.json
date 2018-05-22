@@ -1,0 +1,20 @@
+{
+  "name": "http-mysql-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "http-mysql-server": "./bin/http-mysql-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-body": "^2.5.0",
+    "mysql": "^2.15.0",
+    "yargs": "^11.0.0"
+  }
+}

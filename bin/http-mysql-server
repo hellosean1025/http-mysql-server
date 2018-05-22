@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+const path = require('path')
+const argv = require('yargs').argv;
+let configPath = argv.config;
+let config;
+
+if(configPath){
+  configPath = path.resolve(process.cwd(), configPath);
+  config = require(configPath)
+}else{
+  config = argv;
+}
+
+
+require('../index')(config)
