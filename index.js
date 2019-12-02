@@ -83,7 +83,7 @@ module.exports = function(options) {
       return ctx.body = err.message
     }
 
-    let tables = result.results.map(item => item.Tables_in_test);
+    let tables = result.results.map(item => item["Tables_in_"+config.database]);
     let tableHtml = [];
     tables.forEach((item, index) =>
       tableHtml.push(
@@ -96,8 +96,30 @@ module.exports = function(options) {
 
   
   app.listen(port, function() {
-    process.stdout.write(
-      "服务启动成功, 请访问 “http://127.0.0.1:" + port + '"\n'
-    );
+    console.log("服务启动成功, 请访问 “http://127.0.0.1:" + port + '"\n');
+  });
+  app.on('error', async (err, ctx, next) => {
+
+    // TODO logger errStack
+    console.error(err.message);
+  
   });
 };
+
+
+
+var fs      = require('fs')
+var util    = require('util')
+
+var logPath = 'upgrade.log'
+var logFile = fs.createWriteStream(logPath, { flags: 'a' })
+
+console.log = function() {
+  logFile.write(util.format.apply(null, arguments) + '\n')
+  process.stdout.write(util.format.apply(null, arguments) + '\n')
+}
+
+console.error = function() {
+  logFile.write(util.format.apply(null, arguments) + '\n')
+  process.stderr.write(util.format.apply(null, arguments) + '\n')
+}

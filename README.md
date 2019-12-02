@@ -1,16 +1,27 @@
 ## 安装
 
+### 1.使用 npm 仓库安装
 ```
 npm install -g http-mysql-server
+```
+### 2.使用源码 安装
+```bash
+#a.下载源码
+#b.进入源码包、安装依赖 
+npm install
+#c. 链接脚本
+npm link
+
 ```
 
 ## 启动服务器
 
-用户名、密码和服务器地址可按实际情况填写。
+mysql的用户名、密码、数据库名、数据库的地址、端口、http服务的端口 ，下面罗列的均为默认值，可以不填
 
 ```bash
-http-mysql-server --user root --password 123456 --host 127.0.0.1
-
+http-mysql-server --user root --password 123456 --host 127.0.0.1  --database test --port 3306 --http_port 5555
+#如值指定 数据库端口 其他均用默认值
+http-mysql-server  --port 3306 
 ```
 
 ## 使用方法
