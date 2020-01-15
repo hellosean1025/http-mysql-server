@@ -56,7 +56,7 @@ pm2 start bin/http-mysql-server --name http-mysql-server1  -- --user root --pass
 
 ## 使用方法
 
-启动服务器后，可对该 HTTP 服务器发起 `POST` 请求，假设服务器访问地址为 `http://127.0.0.1:5555`，那么请求地址为 `http://127.0.0.1:555/api/query`
+启动服务器后，可对该 HTTP 服务器发起 `POST` 请求，假设服务器访问地址为 `http://127.0.0.1:5555`，那么请求地址为 `http://127.0.0.1:5555/api/query`
 
 请求参数如下:
 
