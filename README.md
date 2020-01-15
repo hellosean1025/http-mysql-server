@@ -44,7 +44,7 @@ npm run serve -- --user root --password 123456 --host 192.168.1.104  --database 
 # 全局安装 pm2
 npm install pm2 -g   
 
-# 启动 服务， 【--name http-mysql-server 】  是pm2 服务的名称， 【--http_port 5556】 监听端口，可以同时修改这两个，在一台服务器上启动两个服务  
+# 启动 服务， 【--name http-mysql-server 】  是pm2 服务的名称， 【--http_port 5556】 监听端口，可以同时修改这两个，在一台服务器上启动多个服务  
 
 
 pm2 start bin/http-mysql-server --name http-mysql-server  -- --user root --password 123456 --host 192.168.1.104  --database hy --port 3306 --http_port 5556
